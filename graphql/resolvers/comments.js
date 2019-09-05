@@ -6,7 +6,6 @@ module.exports = {
   Mutation: {
     createComment: async (_, { postId, body }, context) => {
       const { username } = checkAuth(context)
-      console.log(username)
       if (body.trim() === '') {
         throw new UserInputError('Empty comment', {
           errors: {
@@ -16,7 +15,6 @@ module.exports = {
       }
 
       const post = await Post.findById(postId)
-      console.log(post)
       if (post) {
         post.comments.unshift({
           body,
