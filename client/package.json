@@ -11,16 +11,16 @@
     "graphql": "^14.4.2",
     "graphql-tag": "^2.10.1",
     "moment": "^2.24.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

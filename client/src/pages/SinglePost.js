@@ -39,6 +39,11 @@ function SinglePost(props) {
     props.history.push('/')
   }
 
+  function handleCommentInput(e) {
+    const input = e.target.value
+    setComment(input)
+  }
+
   let postMarkup
   if (!getPost) {
     postMarkup = <p>Loading post..</p>
@@ -97,7 +102,7 @@ function SinglePost(props) {
                         placeholder="Comment.."
                         name="comment"
                         value={comment}
-                        onChange={event => setComment(event.target.value)}
+                        onChange={handleCommentInput}
                         ref={commentInputRef}
                       />
                       <button
