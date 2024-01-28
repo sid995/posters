@@ -21,14 +21,14 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
 
   return (
     <Card fluid>
-      <Card.Content>
+      <Card.Content as={Link} to={`/posts/${id}`}>
         <Image
           floated="right"
           size="mini"
           src="https://react.semantic-ui.com/images/avatar/large/molly.png"
         />
         <Card.Header>{username}</Card.Header>
-        <Card.Meta as={Link} to={`/posts/${id}`}>
+        <Card.Meta>
           {moment(createdAt).fromNow(true)}
         </Card.Meta>
         <Card.Description>{body}</Card.Description>

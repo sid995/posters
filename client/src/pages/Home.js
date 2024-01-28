@@ -28,12 +28,12 @@ function Home() {
           <h1>Loading Posts ...</h1>
         ) : (
           <Transition.Group>
-            {posts &&
+            {!!posts && posts?.length > 0 ?
               posts.map(post => (
                 <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
                   <PostCard post={post} />
                 </Grid.Column>
-              ))}
+              )) : <h1>No posts available</h1>}
           </Transition.Group>
         )}
       </Grid.Row>
